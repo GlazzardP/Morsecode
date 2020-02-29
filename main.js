@@ -62,9 +62,12 @@ const translateInput = () => {
 // document.getElementById("output").innerHTML = "";
 //split input separated by spaces into an array
 const getInput = document.getElementById("input").value.toLowerCase().split(" ");
-console.log(getInput);    
+// console.log(getInput);    
 //check to see if input is morse. If so run function to translate
 if (getInput[0].includes(".") || (getInput.includes("_"))) {
     const convertedMorse = getInput.map(changeToWords);
     document.getElementById("output").innerHTML = convertedMorse.join("");
+} else if (!getInput[0].includes(".") || (!getInput[0].includes("-"))){
+  const convertedEnglish = getInput.map(translateToMorse);
+  document.getElementById("outputMorse"),innerHTML = convertedEnglish;
 }}
