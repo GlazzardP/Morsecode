@@ -1,73 +1,77 @@
-console.log("abc");
-
-const morseCode = {
-  a: "._",
-  b: "_...",
-  c: "_._.",
-  d: "_..",
+const alphabet = {
+  a: ".-",
+  b: "-...",
+  c: "-.-.",
+  d: "-..",
   e: ".",
-  f: ".._.",
-  g: "__.",
+  f: "..-.",
+  g: "--.",
   h: "....",
   i: "..",
-  j: ".___",
-  k: "_._",
-  l: "._..",
-  m: "__",
-  n: "_.",
-  o: "___",
-  p: ".__.",
-  q: "__._",
-  r: "._.",
+  j: ".---",
+  k: "-.-",
+  l: ".-..",
+  m: "--",
+  n: "-.",
+  o: "---",
+  p: ".--.",
+  q: "--.-",
+  r: ".-.",
   s: "...",
-  t: "_",
-  u: ".._",
-  v: "..._",
-  w: ".__",
-  x: "_.._",
-  y: "_.__",
-  z: "__..",
-  0: "_____",
-  1: ".____",
-  2: "..___",
-  3: "...__",
-  4: "...._",
-  5: ".....",
-  6: "_....",
-  7: "__...",
-  8: "___..",
-  9: "____."
+  t: "-",
+  u: "..-",
+  v: "...-",
+  w: ".--",
+  x: "-..-",
+  y: "-.--",
+  z: "--..",
+  " ": "###",
+  "1": ".----",
+  "2": "..---",
+  "3": "...--",
+  "4": "....-",
+  "5": ".....",
+  "6": "-....",
+  "7": "--...",
+  "8": "---..",
+  "9": "----.",
+  "0": "-----"
 };
 
 const translateToMorse = () => {
-  const getInput = document.getElementById("input");
-  const input = getInput.value;
-  const output = document.getElementById("output");
-  const individualCharacters = input.toLowerCase().split("");
-  //   console.log("individualCharacters");
-  const morseCharacters = individualCharacters.map(index => morseCode[index]);
+  //  const input = document.getElementById("input");
+  const getInput = input.value;
+  ("Paul");
+  //  const output = document.getElementById("output");
+  const characters = getInput.toLowerCase().split("");
+  // characters = ["p", "a", "u", "l"]
+  const morseCharacters = characters.map(char => alphabet[char]);
+  // ["--", "..-"]...
   const morseString = morseCharacters.join(" ");
-  //   console.log(morseString);
-  output.innerHTML = morseString;
+  // "-- ..-"...
+  const finalString = morseString.replace("###", "SPACE ");
+  output.innerHTML = finalString;
 };
 
-// const changeToWords = morseLetter => {
-//   return Object.keys(morseCode).find(key => [key] === morseLetter);
-// };
-
-const getLetters = morseLetter => {
-  return Object.keys(morseCode).find(key => morseCode[key] === morseLetter);
+const changeToWords = morseLetter => {
+  return Object.keys(alphabet).find(key => alphabet[key] === morseLetter);
 };
 
 const translateInput = () => {
-  const input = document
+  document.getElementById("output").innerHTML = "";
+  //split input separated by spaces into an array
+  const getInput = document
     .getElementById("input")
     .value.toLowerCase()
     .split(" ");
-  if (input[0].includes(".") || input.includes("-")) {
-    const convertedMorse = input.map(getLetters);
+  // console.log(getInput);
+  //check to see if input is morse. If so run function to translate
+  if (getInput[0].includes(".") || getInput.includes("_")) {
+    const convertedMorse = getInput.map(changeToWords);
+    // const stringIncludingSpace = convertedMorse.replace("###", "SPACE ")
     document.getElementById("output").innerHTML = convertedMorse.join("");
-  } else if (!input[0].includes(".") || input.includes("-"));
-  const convertedEnglish = input.map(translateToMorse);
-  document.getElementById("output").innerHTML = convertedEnglish;
+  } else if (!getInput[0].includes(".") || !getInput[0].includes("-")) {
+    const convertedEnglish = getInput.map(translateToMorse);
+    document.getElementById("output"), (innerHTML = convertedEnglish);
+  }
 };
