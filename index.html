@@ -3,28 +3,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="styles.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Spartan&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
     <script src="main.js" async defer></script>
     <title>Morsecode</title>
   </head>
   <body>
     <section>
       <h1>Morsecode Translator</h1>
+      <div>
+        <input type="text" id="input" placeholder="abc" />
+        <span class="fas fa-arrow-down"></span>
+        <p id="button" onclick="translateInput()">Click me</p>
+        <span class="fas fa-arrow-down"></span>
+        <p id="output">Awaiting transmission...</p>
+      </div>
     </section>
-    <section>
-<!-- English to morsecode  -->
-    <div>
-      <input type="text" id="inputText" placeholder="abc" />
-      <button onclick="translateToMorse()">click me</button>
-      <p id="outputMorse">Awaiting input...</p>
-    </div>
-<!-- Morse code to english  -->
-    <div>
-      <input type="text" id="input" placeholder="dot dot dash" />
-      <button id="translate" onclick="translateInput()">Translate</button>
-      <p id="output">Awaiting transmission...</p>
-    </div>
-  </section>
   </body>
 </html>

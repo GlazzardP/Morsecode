@@ -1,33 +1,45 @@
 * {
-  font-family: 'Spartan';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
 }
 
 body {
   background-image: url(./marco-krenn-R2TulcJaqSM-unsplash.jpg);
+  background-repeat: no-repeat, repeat;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100%;
+  width: 100%;
 }
 
-section {
-  /* border: solid red 3px; */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  margin-top: 100px;
-  margin-bottom: 150px;
+h1 {
+  padding-top: 70px;
+  text-align: center;
+  font-size: 50px;
 }
 
 div {
+  padding-top: 50px;
   margin: auto;
-  display: inline-block;
+  width: 200px;
 }
 
-P {
-  background-color: #ebecee;
-  height: 100px;
+input {
+  height: 150px;
+  width: 200px;
 }
-/*# sourceMappingURL=styles.css.map */
+
+#button {
+  background-color: whitesmoke;
+  margin: 10px auto;
+  width: 100px;
+}
+
+#output {
+  height: 150px;
+  width: 200px;
+  background-color: cadetblue;
+}
